@@ -1,0 +1,18 @@
+#include <tunables/global>
+
+profile lxc-test-profile flags=(mediate_deleted,attach_disconnected) {
+  #include <abstractions/base>
+
+  capability sys_admin dac_override dac_read_search mknod fsetid net_admin setuid setgid sys_chroot,
+
+  ptrace,
+  mount,
+  umount,
+  remount,
+  unix,
+  file,
+  network,
+  pivot_root,
+  change_profile,
+  signal,
+}
